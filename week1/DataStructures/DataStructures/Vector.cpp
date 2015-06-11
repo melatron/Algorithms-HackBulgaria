@@ -1,7 +1,4 @@
 #include "Vector.h"
-#include <iostream>
-
-using namespace std;
 
 template <typename T>
 Vector<T>::Vector()
@@ -45,7 +42,7 @@ void Vector<T>::add(T value)
 {
 	if (! (this->size < this->capacity))
 	{
-		doubleCapacity();
+		this->doubleCapacity();
 	}
 	this->buffer[this->size] = value;
 	this->size++;
@@ -59,7 +56,7 @@ unsigned int Vector<T>::insert(unsigned int index, T value)
 	{
 		if (this->size == this->capacity)
 		{
-			this->capacity++;
+			this->doubleCapacity();
 		}
 
 		T* newBuffer = new T[this->capacity];
@@ -158,24 +155,4 @@ void Vector<T>::print() const
 		cout << this->buffer[i] << ' ';
 	}
 	return;
-}
-
-int main()
-{
-	Vector<int> vec;
-	
-	vec.add(4);
-	vec.add(5);
-	vec.add(6);
-	vec.add(7);
-	vec.add(8);
-	vec.add(9);
-
-	vec.print();
-
-	int cool = vec.get(200);
-
-	cout << cool;
-
-	return 1;
 }

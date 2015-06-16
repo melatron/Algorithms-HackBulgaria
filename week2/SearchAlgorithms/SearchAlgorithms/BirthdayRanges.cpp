@@ -34,8 +34,9 @@ int fromLargerThan(int left, int right, int number, vector<int> &birhtdays)
 // 6-30
 int getBirthdaysInRange(range r, vector<int> &birthdays)
 {
-	int left = fromLargerThan(0, birthdays.size() - 1, r.from, birthdays);
-	int right = fromLargerThan(0, birthdays.size() - 1, r.to, birthdays);
+	int length = birthdays.size() - 1;
+	int left = fromLargerThan(0, length, r.from, birthdays);
+	int right = fromLargerThan(0, length, r.to, birthdays);
 
 	return right - left > 0 ? right - left : 0;
 }

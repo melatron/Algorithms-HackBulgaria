@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include "BirthdayRanges.h"
+#include "Quadruplets.h"
 
 using namespace std;
 
@@ -56,7 +57,7 @@ double getSquareRoot(double number)
 
 int main()
 {
-	vector<int> cool = { 5, 8, 15, 20, 30, 45, 11, 22, 33, 44 };
+	/*vector<int> cool = { 5, 8, 15, 20, 30, 45, 11, 22, 33, 44 };
 
 	range str1;
 	str1.from = 7;
@@ -67,8 +68,19 @@ int main()
 	str2.to = 23;
 
 	vector<range> cool1 = {str1, str2};
-	vector<int> cool2 = birthdayRanges(cool, cool1);
+	vector<int> cool2 = birthdayRanges(cool, cool1);*/
+		
+	int length = 3;
 
+	int arr1[] = { 5, 3, 4 };
+
+	int arr2[] = { -2, -1, 6 };
+
+	int arr3[] = { -1, -2, 4 };
+
+	int arr4[] = { -1, -2, 7 };
+
+	cout << quadruplets(arr1, arr2, arr3, arr4, length);
 
 	return 1;
 }
